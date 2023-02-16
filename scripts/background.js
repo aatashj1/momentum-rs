@@ -1,8 +1,37 @@
-"use strict";
 const body = document.body;
+const amountOfImages = 20;
 
-let randomNum = (min, max) =>  Math.floor(Math.random() * (max - min + 1)) + min;
+let slideNext = document.querySelector(".slide-next");
+let slidePrev = document.querySelector(".slide-prev");
 
+
+slideNext.addEventListener('click', getSlideNext);
+slidePrev.addEventListener('click', getSlidePrev);
+let randomNum = GetRandomNumber(1, amountOfImages);
+
+
+function getSlideNext(){
+  randomNum++;
+  if(randomNum > amountOfImages){
+    randomNum = 1;
+  }
+  setBg();
+}
+
+function getSlidePrev(){
+  randomNum--;
+  if(randomNum < 1){
+    randomNum = 20;
+  }
+  setBg();
+}
+
+setBg();
+
+
+function  GetRandomNumber  (min, max)  {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 function getTimeOfDay() {
   const dateGreeting = new Date();
@@ -20,10 +49,11 @@ function getTimeOfDay() {
   return timeOfDay;
 }
 
+
 function setBg() {
   let timeOfDay = getTimeOfDay();
   let bgNum = 0;
-  bgNum = String(randomNum(1, 20)).padStart(2, '0');
+  bgNum = String(randomNum).padStart(2, '0');
   let img = new Image();
   img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
   console.log(img.src);
@@ -32,17 +62,4 @@ function setBg() {
     body.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg')`;
     console.log(body.style.backgroundImage);
   };
-}
-
-setBg();
-
-let slideNext = document.querySelector(".slide-next");
-let slidePrev = document.querySelector(".slide-prev");
-
-function getSlideNext(){
-
-}
-
-function getSlidePrev(){
-
 }
