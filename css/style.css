@@ -16,7 +16,7 @@ body {
   font-size: 16px;
   color: #fff;
   text-align: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: url("../assets/img/bg.jpg") center/cover, rgba(0, 0, 0, 0.5);
   /*background: url("../assets/img/bg.jpg") center/cover, rgba(0, 0, 0, 0.5);*/
   background-blend-mode: multiply;
   transition: background-image 1s ease-in-out;
@@ -128,7 +128,7 @@ body {
   align-items: flex-start;
   row-gap: 5px;
   width: 180px;
-  min-height: 180px;  
+  min-height: 140px;
   text-align: left;
 }
 
