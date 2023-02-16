@@ -3,11 +3,17 @@
 const time = document.querySelector('.time');
 const date = document.querySelector('.date');
 
+let greeting = document.querySelector(".greeting");
+let name = document.querySelector(".name");
+
+
+
 function showDate() {
   const dataNew = new Date();
   const options = {weekday: 'long', month: 'long', day: 'numeric'};
   date.textContent = dataNew.toLocaleDateString('en-GB', options);
 }
+
 
 function showTime() {
   const date = new Date();
@@ -18,8 +24,6 @@ function showTime() {
 
 showTime();
 
-let greeting = document.querySelector(".greeting");
-let name = document.querySelector(".name");
 
 
 function getTimeOfDay() {
@@ -35,14 +39,15 @@ function getTimeOfDay() {
     greeting.textContent =  "Good evening, "
   } return greeting.textContent;
 }
-getTimeOfDay();
 
+getTimeOfDay();
 
 
 
 function setLocalStorage() {
   localStorage.setItem('name', name.value);
 }
+
 window.addEventListener('beforeunload', setLocalStorage);
 
 function getLocalStorage() {
