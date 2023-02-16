@@ -29,7 +29,7 @@ showTime();
 function getTimeOfDay() {
   const dateGreeting = new Date();
   const hours = dateGreeting.getHours();
-  if (hours >= 1 && hours <= 5){
+  if (hours >= 0 && hours <= 5){
     greeting.textContent =  "Good night, "
   } else if(hours >= 6 && hours <= 11){
     greeting.textContent =  "Good morning, "
@@ -55,4 +55,3 @@ function getLocalStorage() {
     name.value = localStorage.getItem('name');
   }
 }
-window.addEventListener('load', getLocalStorage);

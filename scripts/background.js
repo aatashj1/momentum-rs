@@ -36,8 +36,9 @@ function  GetRandomNumber  (min, max)  {
 function getTimeOfDay() {
   const dateGreeting = new Date();
   const hours = dateGreeting.getHours();
+  console.log(hours);
   let timeOfDay = "";
-  if (hours >= 1 && hours <= 5) {
+  if (hours >= 0 && hours <= 5) {
     timeOfDay = "night";
   } else if (hours >= 6 && hours <= 11) {
     timeOfDay = "morning";
@@ -50,16 +51,17 @@ function getTimeOfDay() {
 }
 
 
+
 function setBg() {
   let timeOfDay = getTimeOfDay();
   let bgNum = 0;
   bgNum = String(randomNum).padStart(2, '0');
   let img = new Image();
-  img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
+  img.src = `https://raw.githubusercontent.com/aatashj1/momentum-rs/master/assets/bg/${timeOfDay}/${bgNum}.jpg`;
   console.log(img.src);
   body.style.backgroundImag = img.src;
   img.onload = () => {
-    body.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg')`;
+    body.style.backgroundImage = `url('https://raw.githubusercontent.com/aatashj1/momentum-rs/master/assets/bg/${timeOfDay}/${bgNum}.jpg')`;
     console.log(body.style.backgroundImage);
   };
 }
