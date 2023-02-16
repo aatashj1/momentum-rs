@@ -13,7 +13,7 @@ async function getWeather() {
 
   weatherIcon.className = 'weather-icon owf';
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-  wind.textContent = `Wind speed: ${data.wind.speed}`
+  wind.textContent = `Wind speed: ${data.wind.speed}`;
   temperature.textContent = `${data.main.temp}°C`;
   weatherDescription.textContent = data.weather[0].description;
 }
