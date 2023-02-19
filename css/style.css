@@ -3,6 +3,10 @@
   src: url("../assets/fonts/Arial-MT.woff"); /* Путь к файлу со шрифтом */
  }
 
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +16,7 @@
 body {
   min-width: 480px;
   min-height: 100vh;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color: #fff;
   text-align: center;
@@ -199,7 +203,7 @@ body {
 .time {
   min-height: 124px;
   margin-bottom: 10px;
-  font-family: 'Arial-MT';
+  font-family: 'Montserrat', serif;
   font-size: 100px;
   letter-spacing: -4px;  
 }
