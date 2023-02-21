@@ -7,6 +7,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,24 +42,89 @@ body {
   padding: 20px;
 }
 
+
+
 .player-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 120px;
-  margin-bottom: 28px;
+  width: 350px;
+  margin-bottom: 14px;
+}
+
+.soundVolume {
+  outline: none;
+  -webkit-appearance: none;
+  width: 150px;
+  height: 7px;
+  background-color: #cecece;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #e5aa16;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background .3s ease-in-out;
+}
+
+.duration-player {
+  height: 7px;
+  background-color: #cecece;
+  width: 280px;
+
+}
+.progress-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.timer {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 5px;
+
+}.play-list {
+  height: 400px;
+ }
+
+ .play-item {
+
+ }
+
+audio {
+  display: block;
+  width: 600px;
+  height: 40px;
+  color: #cecece;
+}
+
+.progress {
+  width: 0px;
+  height: 7px;
+  background-color: #e5aa16;
 }
 
 .play-list {
   text-align: left;
+  margin-top: 20px;
 }
 
 .play-item {
   position: relative;
-  padding: 5px;
-  padding-left: 20px;
+  height: 20px;
+  width: auto;
+  margin-top: 10px;
+  background-color: rgba(40, 44, 52, 0.16);
+  color: #e6ae25;
+  font-size: 15px;
+  padding-left: 5px;
   list-style: none;
-  opacity: .8;
+  opacity: .7;
   cursor: pointer;
   transition: .3s;
 }
@@ -63,13 +132,13 @@ body {
 .play-item:hover {
   opacity: 1;
 }
+.chb {
+  filter: grayscale(100%);
+}
 
-.play-item::before {
-  content: "\2713";  
-  position: absolute;
-  left: 0;
-  top: 2px;
-  font-weight: 900;
+.opacity {
+  opacity: 1;
+  color: #ffc346;
 }
 
 .item-active::before {
@@ -114,6 +183,9 @@ body {
 }
 
 .pause {
+  width: 40px;
+  height: 40px;
+  background-size: 40px 40px;
   background-image: url("../assets/svg/pause.svg");
 }
 
@@ -123,6 +195,11 @@ body {
 
 .play-next {
   background-image: url("../assets/svg/play-next.svg");
+}
+
+
+a {
+  text-decoration-skip-ink: auto;
 }
 
 .weather {
