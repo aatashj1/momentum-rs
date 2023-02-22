@@ -3,7 +3,7 @@ const amountOfImages = 20;
 
 let slideNext = document.querySelector(".slide-next");
 let slidePrev = document.querySelector(".slide-prev");
-
+let muteButton = document.querySelector(".muteButton");
 
 slideNext.addEventListener('click', getSlideNext);
 slidePrev.addEventListener('click', getSlidePrev);
@@ -65,3 +65,5 @@ function setBg() {
     console.log(body.style.backgroundImage);
   };
 }
+
+
