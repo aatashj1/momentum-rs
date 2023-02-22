@@ -1,60 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="assets/favicon.ico" rel="shortcut icon" />
-  <link rel="stylesheet" href="css/owfont-regular.css" />
-  <link rel="stylesheet" href="css/style.css" />
+   <meta charset="UTF-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <link href="assets/favicon.ico" rel="shortcut icon"/>
+   <link rel="stylesheet" href="css/owfont-regular.css"/>
+   <link rel="stylesheet" href="css/style.css"/>
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title>momentum</title>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet">
+   <title>momentum</title>
 </head>
 <body class="body">
-  <header class="header">
-    <div class="player">
+<header class="header">
+   <div class="player">
       <div class="player-controls">
-        <button class="play-prev player-icon"></button>
-        <button class="play player-icon"></button>
-        <button class="play-next player-icon"></button>
+         <button class="play-prev player-icon"></button>
+         <button class="play-btn play player-icon"></button>
+         <button class="play-next player-icon"></button>
+         <img alt="mute" class="muteButton" src="assets/svg/icons8-voice-64.png" style="height: 25px; margin-left: 13px">
+         <input class="soundVolume" type="range" min="0" max="1" step="0.01">
       </div>
-      <ul class="play-list"></ul>
-    </div>
-    <div class="weather">
-      <input type="text" class="city" />
+      <div class="progress-container">
+         <div class="duration-player">
+            <div class="progress"></div>
+         </div>
+         <div class="timer">
+            <div class="time-active"></div>
+            <div class="duration"></div>
+         </div>
+      </div>
+      <div class="play-list">
+
+         </div>
+      </div>
+   <div class="weather">
+      <input type="text" class="city"/>
       <i class="weather-icon owf"></i>
       <div class="weather-error"></div>
       <div class="description-container">
-        <span class="temperature"></span>
-        <span class="weather-description"></span>
+         <span class="temperature"></span>
+         <span class="weather-description"></span>
       </div>
       <div class="wind"></div>
       <div class="humidity"></div>
-    </div>
-  </header>
-  <main class="main">
-    <div class="slider-icons">
+   </div>
+</header>
+<main class="main">
+   <div class="slider-icons">
       <button class="slide-prev slider-icon"></button>
       <button class="slide-next slider-icon"></button>
-    </div>
-    <time class="time"></time>
-    <date class="date"></date>
-    <div class="greeting-container">
+   </div>
+   <time class="time"></time>
+   <date class="date"></date>
+   <div class="greeting-container">
       <span class="greeting"></span>
-      <input type="text" class="name" placeholder="Write your name" />
-    </div>
-  </main>
-  <footer class="footer">
-    <button class="change-quote"></button>
-    <div>
+      <input type="text" class="name" placeholder="Write your name"/>
+   </div>
+</main>
+<div class="lang">
+<button class="rus lang-btn">
+   RU
+</button>
+   <button class="eng lang-btn">
+      EN
+   </button>
+</div>
+<footer class="footer">
+   <button class="change-quote"></button>
+   <div>
       <div class="quote"></div>
       <div class="author"></div>
-    </div>
-  </footer>
-  <script src="scripts/mainInfo.js"></script>
+   </div>
+
+</footer>
+
+<script src="scripts/mainInfo.js"></script>
 <script src="scripts/background.js"></script>
 <script src="scripts/weather.js"></script>
 <script src="scripts/quotes.js"></script>
+<script type="module" src="./scripts/player.js"></script>
+
 </body>
 </html>
