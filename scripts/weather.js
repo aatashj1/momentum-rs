@@ -5,9 +5,9 @@ const wind = document.querySelector('.wind');
 const weatherDescription = document.querySelector('.weather-description');
 
 const city = document.querySelector('.city');
-
-async function getWeather() {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=83b4723393f25e2c076e5558fa794a27&units=metric`;
+city.value = "Minsk";
+export async function getWeather(language) {
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${language}&appid=83b4723393f25e2c076e5558fa794a27&units=metric`;
   const res = await fetch(url);
   const data = await res.json();
 
@@ -16,8 +16,11 @@ async function getWeather() {
   wind.textContent = `Wind speed: ${data.wind.speed}`;
   temperature.textContent = `${data.main.temp}°C`;
   weatherDescription.textContent = data.weather[0].description;
+
+
+
 }
 
 city.addEventListener("change",getWeather);
-city.value = "Minsk";
-getWeather();
+
+

@@ -12,6 +12,7 @@ let songDuration = document.querySelector(".duration");
 let progressBar = document.querySelector('.progress');
 let timeline = document.querySelector(".duration-player");
 let soundVolume = document.querySelector(".soundVolume");
+let muteButton = document.querySelector(".muteButton");
 
 let amountOfSongs = playList.length - 1;
 
@@ -19,6 +20,7 @@ audio.addEventListener("ended", playNextSongInFlow);
 nextBtn.addEventListener("click", playNext);
 prevBtn.addEventListener("click", playPrev);
 soundVolume.addEventListener('input',volume);
+
 muteButton.addEventListener("click", mute);
 
 

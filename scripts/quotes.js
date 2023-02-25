@@ -1,33 +1,29 @@
-let quote = document.querySelector(".quote");
-let authorQuote = document.querySelector(".author");
-let changeQuote = document.querySelector(".change-quote");
-
-async function getQuotes() {
-  const quotes = 'data.json';
-  const res = await fetch(quotes);
-  const data = await res.json();
-  return data;
-}
+import Randomizer from "./Randomizer.js";
 
 
-function  GetRandomNumber  (min, max)  {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+export default class Quotes {
+  quoteElement;
+  authorQuoteElement;
+  changeQuoteButton;
 
+  constructor(data) {
+    this.quoteElement = document.querySelector(".quote");
+    this.authorQuoteElement = document.querySelector(".author");
+    this.changeQuoteButton = document.querySelector(".change-quote");
+    this.changeQuoteButton.addEventListener("click",()=>this.changeQuote(data));
+    this.changeQuote(data);
+  }
 
+  changeQuote(data) {
+    let quote = this.getQuote( data.dataJson,data.currentLanguage);
+    this.quoteElement.textContent = quote.text;
+    this.authorQuoteElement.textContent = quote.author;
+  }
 
-
-async function showQuotes (){
-  let dataFromJson = await getQuotes();
-   let amountOfQuotes = dataFromJson.length-1;
-  let randomNum = GetRandomNumber(0,amountOfQuotes);
-  quote.textContent = dataFromJson[randomNum].text;
-  authorQuote.textContent =  dataFromJson[randomNum].author;
-}
-showQuotes ();
-
-changeQuote.addEventListener("click", change);
-
-function change () {
-  showQuotes ();
+  getQuote(dataJson, language) {
+    let quotesFromJson = dataJson.quotes[language];
+    let amountOfQuotes = quotesFromJson.length - 1;
+    let randomNum = new Randomizer().getRandomNumber(0, amountOfQuotes);
+    return quotesFromJson[randomNum];
+  }
 }

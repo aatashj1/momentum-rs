@@ -1,13 +1,15 @@
+import Randomizer from "./Randomizer.js";
+
 const body = document.body;
 const amountOfImages = 20;
 
 let slideNext = document.querySelector(".slide-next");
 let slidePrev = document.querySelector(".slide-prev");
-let muteButton = document.querySelector(".muteButton");
+
 
 slideNext.addEventListener('click', getSlideNext);
 slidePrev.addEventListener('click', getSlidePrev);
-let randomNum = GetRandomNumber(1, amountOfImages);
+let randomNum = new Randomizer().getRandomNumber(1, amountOfImages);
 
 
 function getSlideNext(){
@@ -29,14 +31,11 @@ function getSlidePrev(){
 setBg();
 
 
-function  GetRandomNumber  (min, max)  {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+
 
 function getTimeOfDay() {
   const dateGreeting = new Date();
   const hours = dateGreeting.getHours();
-  console.log(hours);
   let timeOfDay = "";
   if (hours >= 0 && hours <= 5) {
     timeOfDay = "night";
@@ -58,11 +57,9 @@ function setBg() {
   bgNum = String(randomNum).padStart(2, '0');
   let img = new Image();
   img.src = `https://raw.githubusercontent.com/aatashj1/momentum-rs/master/assets/bg/${timeOfDay}/${bgNum}.jpg`;
-  console.log(img.src);
   body.style.backgroundImag = img.src;
   img.onload = () => {
     body.style.backgroundImage = `url('https://raw.githubusercontent.com/aatashj1/momentum-rs/master/assets/bg/${timeOfDay}/${bgNum}.jpg')`;
-    console.log(body.style.backgroundImage);
   };
 }
 
