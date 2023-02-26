@@ -4,6 +4,7 @@ let greetingCheck = document.getElementById("greeting");
 let quotesCheck = document.getElementById("quotes");
 let timeDateCheck = document.getElementById("time-date");
 let todoCheck = document.getElementById("todo");
+let time1 = document.getElementById("time");
 
 let player = document.querySelector(".player");
 let weather = document.querySelector(".weather");
@@ -24,6 +25,7 @@ function changePlayer () {
   } else {
     player.style.display = "block";
   }
+  localStorage.setItem("isPlayerEnabled", playerCheck.checked)
 }
 
 function changeWeather () {
@@ -32,6 +34,7 @@ function changeWeather () {
   } else {
     weather.style.display = "block";
   }
+  localStorage.setItem("isWeatherEnabled", weatherCheck.checked)
 }
 
 function changeGreeting () {
@@ -40,6 +43,7 @@ function changeGreeting () {
   } else {
     greeting.style.display = "block";
   }
+  localStorage.setItem("isGreetingEnabled", greetingCheck.checked)
 }
 
 function changeQuotes () {
@@ -48,6 +52,7 @@ function changeQuotes () {
   } else {
     quotes.style.display = "block";
   }
+  localStorage.setItem("isTQuotesEnabled", quotesCheck.checked)
 }
 
 function changeTimeAndDate () {
@@ -58,4 +63,25 @@ function changeTimeAndDate () {
     time.style.display = "block";
     date.style.display = "block";
   }
+  localStorage.setItem("isTimeEnabled", timeDateCheck.checked)
 }
+
+load();
+function load(){
+  weatherCheck.checked = localStorage.getItem('isTimeEnabled') === "true";
+  weatherCheck.dispatchEvent(new Event("change"));
+
+  quotesCheck.checked = localStorage.getItem('isTQuotesEnabled') === "true";
+  quotesCheck.dispatchEvent(new Event("change"));
+
+  greetingCheck.checked = localStorage.getItem('isGreetingEnabled') === "true";
+  greetingCheck.dispatchEvent(new Event("change"));
+
+  playerCheck.checked = localStorage.getItem('isPlayerEnabled') === "true";
+  playerCheck.dispatchEvent(new Event("change"));
+
+  timeDateCheck.checked = localStorage.getItem('isTimeEnabled') === "true";
+  timeDateCheck.dispatchEvent(new Event("change"))
+
+}
+
