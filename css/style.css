@@ -208,7 +208,6 @@ a {
 }
 
 .weather {
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -302,7 +301,7 @@ a {
 
 .greeting-container {
   position: absolute;
-  bottom: 40px;
+  bottom: 3%;
   display: flex;
   flex-wrap: wrap;
   justify-content: stretch;
