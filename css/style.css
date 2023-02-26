@@ -202,15 +202,18 @@ audio {
 a {
   text-decoration-skip-ink: auto;
 }
-
-.weather {
+.weather-container {
   right: 30px;
   position: absolute;
+}
+
+.weather {
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  row-gap: 5px;
+  row-gap: 10px;
   width: 180px;
   min-height: 140px;
   text-align: left;
