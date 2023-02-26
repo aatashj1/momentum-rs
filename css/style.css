@@ -278,12 +278,9 @@ a {
   background-image: url("../assets/svg/slider-next.svg");
 }
 
-.time-date {
-  display: flex;
-  flex-direction: column;
-}
 
-.time-date {
+
+.time {
   min-height: 124px;
   margin-bottom: 10px;
   font-family: 'Montserrat', serif;

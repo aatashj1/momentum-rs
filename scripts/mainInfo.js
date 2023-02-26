@@ -6,7 +6,7 @@ export default class MainInfo {
   name;
 
   constructor(data) {
-    this.time = document.querySelector('.time-date');
+    this.time = document.querySelector('.time');
     this.date = document.querySelector('.date');
     this.greeting = document.querySelector(".greeting");
     this.name = document.querySelector(".name");
