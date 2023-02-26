@@ -2,6 +2,8 @@ import {getWeather} from "./weather.js";
 import DataContainer from "./dataContainer.js";
 import Quotes from "./quotes.js";
 import MainInfo from "./mainInfo.js";
+import SettingState from "./settingsState.js";
+
 
 let langRu = document.querySelector('.rus');
 let langEng = document.querySelector('.eng');
@@ -12,8 +14,8 @@ getWeather(dataContainer.data.currentLanguage).then();
 dataContainer.getDataJsonPromise().then(result => {
   dataContainer.data.dataJson = result;
   let quotes = new Quotes(dataContainer.data);
-
   let mainInfo = new MainInfo(dataContainer.data);
+  let setting = new SettingState(dataContainer.data);
 
   langRu.addEventListener('click', () => {
     if (!dataContainer.UserChooseRussian())
@@ -24,6 +26,7 @@ dataContainer.getDataJsonPromise().then(result => {
     quotes.changeQuote(dataContainer.data);
     getWeather(dataContainer.data.currentLanguage).then();
     mainInfo.changePlaceholder(dataContainer.data.dataJson.namePlaceholder.ru)
+    setting.translate(dataContainer.data.dataJson, dataContainer.data.currentLanguage);
   });
   langEng.addEventListener('click', () => {
     if (!dataContainer.UserChooseEnglish())
@@ -33,7 +36,7 @@ dataContainer.getDataJsonPromise().then(result => {
     quotes.changeQuote(dataContainer.data);
     getWeather(dataContainer.data.currentLanguage).then();
     mainInfo.changePlaceholder(dataContainer.data.dataJson.namePlaceholder.en)
-
+    setting.translate(dataContainer.data.dataJson, dataContainer.data.currentLanguage);
   });
 });
 

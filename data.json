@@ -92,50 +92,24 @@
   "en": "Write your name"
  },
  "setting": {
-  "en": [
-   { "photoSource":  "Choose photo-resource"
-   },
-   {
-    "block": "Tim/Date"
-   },
-   {
-    "block": "Greeting"
-   },
-   {
-    "block": "Quote"
-   },
-   {
-    "block": "Weather"
-   },
-   {
-    "block": "Player"
-   },
-   {
-    "block": "ToDo List"
-   }
-  ],
-  "ru": [
-   { "photoSource":  "Выбери фото-ресурс"
-   },
-   {
-    "block": "Дата/Время"
-   },
-   {
-    "block": "Приветствие"
-   },
-   {
-    "block": "Цитата"
-   },
-   {
-    "block": "Погода"
-   },
-   {
-    "block": "Музяка"
-   },
-   {
-    "block": "Список дел"
-   }
-  ]
+  "en": {
+   "photoSource": "Choose photo-resource:",
+   "time": "Time/Date",
+   "greeting": "Greeting",
+   "quote": "Quote",
+   "weather": "Weather",
+   "player": "Player",
+   "todo": "ToDo List"
+  },
+  "ru": {
+   "photoSource": "Выбери фото-ресурс:",
+   "time": "Дата/Время",
+   "greeting": "Приветствие",
+   "quote": "Цитата",
+   "weather": "Погода",
+   "player": "Музяка",
+   "todo": "Список дел"
+  }
  }
 }
 

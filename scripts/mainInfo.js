@@ -6,14 +6,13 @@ export default class MainInfo {
   name;
 
   constructor(data) {
-    this.time = document.querySelector('.time');
+    this.time = document.querySelector('.time-date');
     this.date = document.querySelector('.date');
     this.greeting = document.querySelector(".greeting");
     this.name = document.querySelector(".name");
 
     window.addEventListener('beforeunload', ()=>this.setLocalStorage());
     this.getLocalStorage();
-    console.log('asd')
     this.showTime(data.currentLanguage);
     this.getTimeOfDay(data.dataJson, data.currentLanguage);
   }

@@ -1,19 +1,6 @@
-let openButton = document.querySelector(".sett-main-button");
-let settingsBlock = document.querySelector(".settings");
-let closeButton = document.querySelector(".close-sett-button");
-
-
-openButton.addEventListener("click", openSettingsBlock);
-
-function openSettingsBlock(){
-  openButton.style.display = "none";
-  settingsBlock.style.display ="flex";
-}
-
-closeButton.addEventListener("click", closeSettingsBlock);
-
-function closeSettingsBlock(){
-  openButton.style.display = "flex";
-  settingsBlock.style.display ="none";
-}
-
+let playerCheck = document.getElementById("player");
+let weatherCheck = document.getElementById("weather");
+let greetingCheck = document.getElementById("greeting");
+let quotesCheck = document.getElementById("quotes");
+let timeCheck = document.getElementById("time");
+let todoCheck = document.getElementById("todo");

@@ -55,7 +55,7 @@
       <button class="slide-next slider-icon"></button>
    </div>
    <div class="time-date">
-      <time class="time"></time>
+      <time class="time-date"></time>
       <date class="date"></date>
    </div>
    <div class="greeting-container">
@@ -79,23 +79,27 @@
       <div class="input-container">
          <div class="input">
             <input type="checkbox" class="checkbox" id="player" name="player" checked>
-            <label for="player">Player</label>
+            <label for="player" class="player-check"></label>
          </div>
          <div class="input">
             <input type="checkbox" class="checkbox" id="weather" name="weather" checked>
-            <label for="weather">Weather</label>
+            <label for="weather" class="weather-check"></label>
          </div>
          <div class="input">
             <input type="checkbox" class="checkbox" id="greeting" name="greeting" checked>
-            <label for="greeting">Greeting</label>
+            <label for="greeting" class="greeting-check"></label>
          </div>
          <div class="input">
             <input type="checkbox" class="checkbox" id="quotes" name="quotes" checked>
-            <label for="quotes">Quotes</label>
+            <label for="quotes" class="quotes-check"></label>
          </div>
          <div class="input">
-            <input type="checkbox" class="checkbox" id="Time" name="Time" checked>
-            <label for="Time">Time/Date</label>
+            <input type="checkbox" class="checkbox" id="time-date" name="time-date" checked>
+            <label for="time-date" class="time-check"></label>
+         </div>
+         <div class="input">
+            <input type="checkbox" class="checkbox" id="todo" name="todo" checked>
+            <label for="todo" class="todo-check"></label>
          </div>
       </div>
       <div class="api-container">
@@ -132,7 +136,7 @@
 <script type="module" src="scripts/background.js"></script>
 <script type="module" src="scripts/player.js"></script>
 <script type="module" src="scripts/playList.js"></script>
-<script type="module" src="scripts/settings.js"></script>
+<script type="module" src="scripts/settingsState.js"></script>
 
 </body>
 </html>
