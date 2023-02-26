@@ -54,8 +54,10 @@
       <button class="slide-prev slider-icon"></button>
       <button class="slide-next slider-icon"></button>
    </div>
-   <time class="time"></time>
-   <date class="date"></date>
+   <div class="time-date">
+      <time class="time"></time>
+      <date class="date"></date>
+   </div>
    <div class="greeting-container">
       <span class="greeting"></span>
       <input type="text" class="name" placeholder="Write your name"/>
@@ -63,25 +65,66 @@
 </main>
 
 <footer class="footer">
-   <button class="change-quote"></button>
-   <div>
+
+   <div class="quotes-container">
+      <button class="change-quote"></button>
       <div class="quote"></div>
       <div class="author"></div>
    </div>
 
 
-   <img alt="settings" class="sett-pic" src="assets/settings-gear-svgrepo-com.svg" style="height: 40px">
-      <div class="settings">
-         <img class="close-sett-button" src="assets/close-svgrepo-com.svg" alt="close-settings" width="25px">
-         <div class="lang">
-            <button class="rus lang-btn">
-               RU
-            </button>
-            <button class="eng lang-btn">
-               EN
-            </button>
+   <img alt="settings" class="sett-main-button" src="assets/settings-gear-svgrepo-com.svg" style="height: 40px">
+   <div class="settings">
+      <img class="close-sett-button" src="assets/close-svgrepo-com.svg" alt="close-settings" width="25px">
+      <div class="input-container">
+         <div class="input">
+            <input type="checkbox" class="checkbox" id="player" name="player" checked>
+            <label for="player">Player</label>
+         </div>
+         <div class="input">
+            <input type="checkbox" class="checkbox" id="weather" name="weather" checked>
+            <label for="weather">Weather</label>
+         </div>
+         <div class="input">
+            <input type="checkbox" class="checkbox" id="greeting" name="greeting" checked>
+            <label for="greeting">Greeting</label>
+         </div>
+         <div class="input">
+            <input type="checkbox" class="checkbox" id="quotes" name="quotes" checked>
+            <label for="quotes">Quotes</label>
+         </div>
+         <div class="input">
+            <input type="checkbox" class="checkbox" id="Time" name="Time" checked>
+            <label for="Time">Time/Date</label>
          </div>
       </div>
+      <div class="api-container">
+         <span class="api-text">Choose API:</span>
+         <div class="api">
+            <input type="radio" id="GitHub" name="api" value="GitHub" checked>
+            <label for="GitHub">GitHub</label>
+         </div>
+         <div class="api">
+            <input type="radio" id="Unsplash" name="api" value="Unsplash">
+            <label for="Unsplash">Unsplash</label>
+         </div>
+         <div class="api">
+
+            <input type="radio" id="Flickr" name="api" value="Flickr">
+            <label for="Flickr">Flickr</label>
+         </div>
+      </div>
+      <div class="lang">
+         <button class="rus lang-btn">
+            RU
+         </button>
+         <button class="eng lang-btn">
+            EN
+         </button>
+      </div>
+   </div>
+
+
 
 </footer>
 
@@ -89,6 +132,7 @@
 <script type="module" src="scripts/background.js"></script>
 <script type="module" src="scripts/player.js"></script>
 <script type="module" src="scripts/playList.js"></script>
+<script type="module" src="scripts/settings.js"></script>
 
 </body>
 </html>

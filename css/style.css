@@ -278,6 +278,11 @@ a {
   background-image: url("../assets/svg/slider-next.svg");
 }
 
+.time-date {
+  display: flex;
+  flex-direction: column;
+}
+
 .time {
   min-height: 124px;
   margin-bottom: 10px;
@@ -285,6 +290,7 @@ a {
   font-size: 100px;
   letter-spacing: -4px;  
 }
+
 
 .date {
   min-height: 28px;
@@ -384,7 +390,7 @@ a {
 }
 
 .lang-btn {
-  background-color: rgba(229, 220, 210, 0.68);
+  background-color: rgba(211, 203, 194, 0.68);
   color: #282c34;
   width: 100px;
   padding: 0;
@@ -392,7 +398,7 @@ a {
   font: inherit;
   font-weight: 500;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .lang-btn:hover {
@@ -403,8 +409,8 @@ a {
 
 
 
-.sett-pic {
-
+.sett-main-button {
+ display: block;
   position: absolute;
   left: 30px;
   cursor: pointer;
@@ -415,10 +421,11 @@ a {
   left: 30px;
   bottom: 30px;
   width: 300px;
-  height: 400px;
-  background-color: rgba(239, 231, 214, 0.7);
-  display: flex;
-  display: none;
+  height: 350px;
+  background-color: rgba(161, 161, 175, 0.84);
+  display: flex; //todo: заменить на none
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 .close-sett-button {
@@ -427,4 +434,38 @@ a {
   align-self: flex-start;
   margin-top: 10px;
   margin-left: 260px;
+}
+
+.input-container {
+ width: 280px;
+  margin: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+  justify-content: space-between;
+}
+
+.input {
+
+  width: 120px;
+  display: flex;
+  gap: 5px;
+}
+
+label {
+  font-weight: 200;
+}
+
+.api-container {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+
+}
+
+.api-text {
+  align-self: center;
+  font-weight: 400;
 }
