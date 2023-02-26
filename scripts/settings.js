@@ -68,6 +68,13 @@ function changeTimeAndDate () {
 
 load();
 function load(){
+ if(localStorage.getItem('isTimeEnabled') == null){
+   localStorage.setItem("isTimeEnabled", "true");
+   localStorage.setItem("isTQuotesEnabled", "true");
+   localStorage.setItem("isGreetingEnabled", "true");
+   localStorage.setItem("isWeatherEnabled", "true");
+   localStorage.setItem("isPlayerEnabled", "true");
+ }
   weatherCheck.checked = localStorage.getItem('isTimeEnabled') === "true";
   weatherCheck.dispatchEvent(new Event("change"));
 
