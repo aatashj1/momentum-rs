@@ -8,13 +8,15 @@ export default class DataContainer {
 
   UserChooseRussian() {
     if (this.data.currentLanguage === "ru") //todo: dont work
-      return;
+      return false;
     this.data.currentLanguage = "ru";
+    return true;
   }
 
   UserChooseEnglish() {
     if (this.data.currentLanguage === "en")
-      return;
+      return false;
     this.data.currentLanguage = "en";
+    return true;
   }
 }

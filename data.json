@@ -62,7 +62,7 @@
  "greetings": {
   "en": [
    {
-    "text": "Good night, ."
+    "text": "Good night, "
    },
    {
     "text": "Good morning, "
@@ -88,7 +88,10 @@
     "text": "Добрый вечер, "
    }
   ]
+ },
+ "namePlaceholder": {
+  "ru": "Напишите своё имя",
+  "en": "Write your name"
  }
-
 }
 
