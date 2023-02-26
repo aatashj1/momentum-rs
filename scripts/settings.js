@@ -32,7 +32,7 @@ function changeWeather () {
   if (weatherCheck.checked === false) {
     weather.style.display = "none";
   } else {
-    weather.style.display = "block";
+    weather.style.display = "flex";
   }
   localStorage.setItem("isWeatherEnabled", weatherCheck.checked)
 }
