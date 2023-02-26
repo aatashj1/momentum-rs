@@ -20,7 +20,8 @@
          <button class="play-prev player-icon"></button>
          <button class="play-btn play player-icon"></button>
          <button class="play-next player-icon"></button>
-         <img alt="mute" class="muteButton" src="assets/svg/icons8-voice-64.png" style="height: 25px; margin-left: 13px">
+         <img alt="mute" class="muteButton" src="assets/svg/icons8-voice-64.png"
+              style="height: 25px; margin-left: 13px">
          <input class="soundVolume" type="range" min="0" max="1" step="0.01">
       </div>
       <div class="progress-container">
@@ -34,8 +35,8 @@
       </div>
       <div class="play-list">
 
-         </div>
       </div>
+   </div>
    <div class="weather">
       <input type="text" class="city"/>
       <i class="weather-icon owf"></i>
@@ -60,14 +61,7 @@
       <input type="text" class="name" placeholder="Write your name"/>
    </div>
 </main>
-<div class="lang">
-<button class="rus lang-btn">
-   RU
-</button>
-   <button class="eng lang-btn">
-      EN
-   </button>
-</div>
+
 <footer class="footer">
    <button class="change-quote"></button>
    <div>
@@ -75,12 +69,26 @@
       <div class="author"></div>
    </div>
 
+
+   <img alt="settings" class="sett-pic" src="assets/settings-gear-svgrepo-com.svg" style="height: 40px">
+      <div class="settings">
+         <img class="close-sett-button" src="assets/close-svgrepo-com.svg" alt="close-settings" width="25px">
+         <div class="lang">
+            <button class="rus lang-btn">
+               RU
+            </button>
+            <button class="eng lang-btn">
+               EN
+            </button>
+         </div>
+      </div>
+
 </footer>
 
 <script type="module" src="./scripts/index.js"></script>
-<script type="module"  src="scripts/background.js"></script>
-<script type="module"  src="scripts/player.js"></script>
-<script type="module"  src="scripts/playList.js"></script>
+<script type="module" src="scripts/background.js"></script>
+<script type="module" src="scripts/player.js"></script>
+<script type="module" src="scripts/playList.js"></script>
 
 </body>
 </html>
