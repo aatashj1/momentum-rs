@@ -423,7 +423,7 @@ a {
   width: 300px;
   height: 350px;
   background-color: rgba(161, 161, 175, 0.84);
-  display: flex; //todo: заменить на none
+  display: none;
   justify-content: flex-start;
   flex-direction: column;
 }
