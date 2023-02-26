@@ -2,11 +2,60 @@ let playerCheck = document.getElementById("player");
 let weatherCheck = document.getElementById("weather");
 let greetingCheck = document.getElementById("greeting");
 let quotesCheck = document.getElementById("quotes");
-let timeCheck = document.getElementById("time");
+let timeDateCheck = document.getElementById("time-date");
 let todoCheck = document.getElementById("todo");
-//
-// let player = document.querySelector(".player");
-// let weather = document.querySelector(".weather");
-// let greeting = document.querySelector(".");
-// let quotes = document.querySelector(".");
-// let time = document.querySelector(".");
+
+let player = document.querySelector(".player");
+let weather = document.querySelector(".weather");
+let greeting = document.querySelector(".greeting-container");
+let quotes = document.querySelector(".quotes-container");
+let time = document.querySelector(".time");
+let date = document.querySelector(".date");
+
+playerCheck.addEventListener("change",changePlayer);
+weatherCheck.addEventListener("change",changeWeather);
+greetingCheck.addEventListener("change",changeGreeting);
+quotesCheck.addEventListener("change",changeQuotes);
+timeDateCheck.addEventListener("change",changeTimeAndDate);
+
+function changePlayer () {
+  if (playerCheck.checked === false) {
+    player.style.display = "none";
+  } else {
+    player.style.display = "block";
+  }
+}
+
+function changeWeather () {
+  if (weatherCheck.checked === false) {
+    weather.style.display = "none";
+  } else {
+    weather.style.display = "block";
+  }
+}
+
+function changeGreeting () {
+  if (greetingCheck.checked === false) {
+    greeting.style.display = "none";
+  } else {
+    greeting.style.display = "block";
+  }
+}
+
+function changeQuotes () {
+  if (quotesCheck.checked === false) {
+    quotes.style.display = "none";
+  } else {
+    quotes.style.display = "block";
+  }
+}
+
+function changeTimeAndDate () {
+  if (timeDateCheck.checked === false) {
+    time.style.display = "none";
+    date.style.display = "none";
+  } else {
+    time.style.display = "block";
+    date.style.display = "block";
+  }
+}

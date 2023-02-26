@@ -204,6 +204,8 @@ a {
 }
 
 .weather {
+  right: 30px;
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -296,6 +298,8 @@ a {
 }
 
 .greeting-container {
+  position: absolute;
+  bottom: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: stretch;
@@ -338,6 +342,9 @@ a {
   min-height: 160px;  
   padding: 20px;
 
+}
+.quotes-container {
+  transition: 0.4s linear;
 }
 
 .change-quote {
