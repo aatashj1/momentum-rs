@@ -99,7 +99,9 @@
    "quote": "Quote",
    "weather": "Weather",
    "player": "Player",
-   "todo": "ToDo List"
+   "todo": "ToDo List",
+   "cityValue": "Minsk",
+   "wind": "Wind speed: "
   },
   "ru": {
    "photoSource": "Выбери фото-ресурс:",
@@ -108,7 +110,9 @@
    "quote": "Цитата",
    "weather": "Погода",
    "player": "Музяка",
-   "todo": "Список дел"
+   "todo": "Список дел",
+   "cityValue": "Минск",
+   "wind": "Скорость ветра: "
   }
  }
 }
