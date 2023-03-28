@@ -11,7 +11,7 @@ export default class MainInfo {
     this.greeting = document.querySelector(".greeting");
     this.name = document.querySelector(".name");
 
-    window.addEventListener('beforeunload', ()=>this.setLocalStorage());
+    window.addEventListener('beforeunload', () => this.setLocalStorage());
     this.getLocalStorage();
     this.showTime(data.currentLanguage);
     this.getTimeOfDay(data.dataJson, data.currentLanguage);
@@ -19,9 +19,11 @@ export default class MainInfo {
 
 
   intervalEntity = {timerId: -1, language: "en"};
- changePlaceholder(placeholderText){
-   this.name.placeholder = placeholderText;
- }
+
+  changePlaceholder(placeholderText) {
+    this.name.placeholder = placeholderText;
+  }
+
   _showDate() {
     const dataNew = new Date();
     const options = {weekday: 'long', month: 'long', day: 'numeric'};
@@ -68,5 +70,4 @@ export default class MainInfo {
       this.name.value = localStorage.getItem('name');
     }
   }
-
 }

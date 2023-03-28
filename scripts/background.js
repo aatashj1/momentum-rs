@@ -1,10 +1,10 @@
-import Randomizer from "./Randomizer.js";
+import Randomizer from "./randomizer.js";
 
 const body = document.body;
 const amountOfImages = 20;
 
-let slideNext = document.querySelector(".slide-next");
-let slidePrev = document.querySelector(".slide-prev");
+const slideNext = document.querySelector(".slide-next");
+const slidePrev = document.querySelector(".slide-prev");
 
 
 slideNext.addEventListener('click', getSlideNext);
@@ -12,25 +12,35 @@ slidePrev.addEventListener('click', getSlidePrev);
 let randomNum = new Randomizer().getRandomNumber(1, amountOfImages);
 
 
-function getSlideNext(){
+function setBg() {
+  let timeOfDay = getTimeOfDay();
+  let bgNum = 0;
+  bgNum = String(randomNum).padStart(2, '0');
+  let img = new Image();
+  img.src = `https://raw.githubusercontent.com/aatashj1/momentum-rs/master/assets/bg/${timeOfDay}/${bgNum}.jpg`;
+  body.style.backgroundImag = img.src;
+  img.onload = () => {
+    body.style.backgroundImage = `url('https://raw.githubusercontent.com/aatashj1/momentum-rs/master/assets/bg/${timeOfDay}/${bgNum}.jpg')`;
+  };
+}
+
+function getSlideNext() {
   randomNum++;
-  if(randomNum > amountOfImages){
+  if (randomNum > amountOfImages) {
     randomNum = 1;
   }
   setBg();
 }
 
-function getSlidePrev(){
+function getSlidePrev() {
   randomNum--;
-  if(randomNum < 1){
+  if (randomNum < 1) {
     randomNum = 20;
   }
   setBg();
 }
 
 setBg();
-
-
 
 
 function getTimeOfDay() {
@@ -50,17 +60,5 @@ function getTimeOfDay() {
 }
 
 
-
-function setBg() {
-  let timeOfDay = getTimeOfDay();
-  let bgNum = 0;
-  bgNum = String(randomNum).padStart(2, '0');
-  let img = new Image();
-  img.src = `https://raw.githubusercontent.com/aatashj1/momentum-rs/master/assets/bg/${timeOfDay}/${bgNum}.jpg`;
-  body.style.backgroundImag = img.src;
-  img.onload = () => {
-    body.style.backgroundImage = `url('https://raw.githubusercontent.com/aatashj1/momentum-rs/master/assets/bg/${timeOfDay}/${bgNum}.jpg')`;
-  };
-}
 
 

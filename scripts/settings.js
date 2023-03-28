@@ -13,13 +13,13 @@ let quotes = document.querySelector(".quotes-container");
 let time = document.querySelector(".time");
 let date = document.querySelector(".date");
 
-playerCheck.addEventListener("change",changePlayer);
-weatherCheck.addEventListener("change",changeWeather);
-greetingCheck.addEventListener("change",changeGreeting);
-quotesCheck.addEventListener("change",changeQuotes);
-timeDateCheck.addEventListener("change",changeTimeAndDate);
+playerCheck.addEventListener("change", changePlayer);
+weatherCheck.addEventListener("change", changeWeather);
+greetingCheck.addEventListener("change", changeGreeting);
+quotesCheck.addEventListener("change", changeQuotes);
+timeDateCheck.addEventListener("change", changeTimeAndDate);
 
-function changePlayer () {
+function changePlayer() {
   if (playerCheck.checked === false) {
     player.style.display = "none";
   } else {
@@ -28,7 +28,7 @@ function changePlayer () {
   localStorage.setItem("isPlayerEnabled", playerCheck.checked)
 }
 
-function changeWeather () {
+function changeWeather() {
   if (weatherCheck.checked === false) {
     weather.style.display = "none";
   } else {
@@ -37,7 +37,7 @@ function changeWeather () {
   localStorage.setItem("isWeatherEnabled", weatherCheck.checked)
 }
 
-function changeGreeting () {
+function changeGreeting() {
   if (greetingCheck.checked === false) {
     greeting.style.display = "none";
   } else {
@@ -46,7 +46,7 @@ function changeGreeting () {
   localStorage.setItem("isGreetingEnabled", greetingCheck.checked)
 }
 
-function changeQuotes () {
+function changeQuotes() {
   if (quotesCheck.checked === false) {
     quotes.style.display = "none";
   } else {
@@ -55,7 +55,7 @@ function changeQuotes () {
   localStorage.setItem("isTQuotesEnabled", quotesCheck.checked)
 }
 
-function changeTimeAndDate () {
+function changeTimeAndDate() {
   if (timeDateCheck.checked === false) {
     time.style.display = "none";
     date.style.display = "none";
@@ -67,14 +67,15 @@ function changeTimeAndDate () {
 }
 
 load();
-function load(){
- if(localStorage.getItem('isTimeEnabled') == null){
-   localStorage.setItem("isTimeEnabled", "true");
-   localStorage.setItem("isTQuotesEnabled", "true");
-   localStorage.setItem("isGreetingEnabled", "true");
-   localStorage.setItem("isWeatherEnabled", "true");
-   localStorage.setItem("isPlayerEnabled", "true");
- }
+
+function load() {
+  if (localStorage.getItem('isTimeEnabled') == null) {
+    localStorage.setItem("isTimeEnabled", "true");
+    localStorage.setItem("isTQuotesEnabled", "true");
+    localStorage.setItem("isGreetingEnabled", "true");
+    localStorage.setItem("isWeatherEnabled", "true");
+    localStorage.setItem("isPlayerEnabled", "true");
+  }
   weatherCheck.checked = localStorage.getItem('isTimeEnabled') === "true";
   weatherCheck.dispatchEvent(new Event("change"));
 

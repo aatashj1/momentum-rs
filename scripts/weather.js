@@ -31,7 +31,7 @@ export async function getWeather(data1, language, cityValue = null) {
     let textTemperature = Math.round(data.main.temp);
     temperature.textContent = `${textTemperature} °C`;
     weatherDescription.textContent = data.weather[0].description;
-  } catch{
+  } catch {
     temperature.textContent = 'Error';
     wind.textContent = '';
     weatherDescription.textContent = '';
@@ -43,11 +43,13 @@ export async function getWeather(data1, language, cityValue = null) {
 function setLocalStorage() {
   localStorage.setItem('city', city.value);
 }
+
 window.addEventListener('beforeunload', setLocalStorage);
 
 function getLocalStorage() {
-  if(localStorage.getItem('city')) {
+  if (localStorage.getItem('city')) {
     city.value = localStorage.getItem('city');
   }
 }
+
 window.addEventListener('load', getLocalStorage);

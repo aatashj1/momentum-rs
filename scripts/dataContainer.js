@@ -1,13 +1,14 @@
 export default class DataContainer {
   data = {currentLanguage: 'en', dataJson: ""};
-  async getDataJsonPromise() {
+
+  async getDataFromJson() {
     const dataJson = 'data.json';
     let dataFromFile = await fetch(dataJson);
     return dataFromFile.json();
   }
 
   UserChooseRussian() {
-    if (this.data.currentLanguage === "ru") //todo: dont work
+    if (this.data.currentLanguage === "ru")
       return false;
     this.data.currentLanguage = "ru";
     return true;

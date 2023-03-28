@@ -1,4 +1,5 @@
 import playList from './playList.js';
+
 let indexOfPlayingAudioInPlayList = 0;
 
 let audio = new Audio();
@@ -19,26 +20,25 @@ let amountOfSongs = playList.length - 1;
 audio.addEventListener("ended", playNextSongInFlow);
 nextBtn.addEventListener("click", playNext);
 prevBtn.addEventListener("click", playPrev);
-soundVolume.addEventListener('input',volume);
+soundVolume.addEventListener('input', volume);
 
 muteButton.addEventListener("click", mute);
 
 
-
-function Initial(){
+function Initial() {
   playButton.addEventListener('click', playAudio);
   createNewElementAndAddEventsForThem();
-  preparingFirstSong ();
+  preparingFirstSong();
 }
 
 
-function preparingFirstSong (){
+function preparingFirstSong() {
   changeAudio(playList[0].src);
   document.querySelector('.play-item').classList.add("opacity");
 }
 
 
-function createNewElementAndAddEventsForThem(){
+function createNewElementAndAddEventsForThem() {
   let playListContainer;
   let divWithSong;
   for (let i = 0; i < playList.length; i++) {
@@ -71,7 +71,7 @@ function opacity(element) {
 
 
 function playMusOnList(e) {
-  if(indexOfPlayingAudioInPlayList === +e.target.dataset.musicIndex){
+  if (indexOfPlayingAudioInPlayList === +e.target.dataset.musicIndex) {
     playAudio();
     return;
   }
@@ -140,25 +140,25 @@ function playPrev() {
 }
 
 
-audio.addEventListener( "loadeddata",
+audio.addEventListener("loadeddata",
  () => {
-   songDuration.textContent = `/ `+getTimeCodeFromNum(audio.duration);
+   songDuration.textContent = `/ ` + getTimeCodeFromNum(audio.duration);
  }
 );
 
 
- function volume() {
-   audio.volume = soundVolume.value;
- }
+function volume() {
+  audio.volume = soundVolume.value;
+}
 
 
-function mute (){
+function mute() {
   muteButton.classList.toggle("chb");
   audio.muted = !audio.muted;
 }
 
 
-setInterval (() => {
+setInterval(() => {
   songActiveTime.textContent = getTimeCodeFromNum(
    audio.currentTime
   );
@@ -168,12 +168,11 @@ setInterval (() => {
 
 timeline.addEventListener("click", e => {
   let timelineWidth = window.getComputedStyle(timeline).width;
-  let timeToFind = e.offsetX / parseInt(timelineWidth) * audio.duration;
-  audio.currentTime = timeToFind;
+  audio.currentTime = e.offsetX / parseInt(timelineWidth) * audio.duration;
 }, false);
 
 
-function playNextSongInFlow () {
+function playNextSongInFlow() {
   indexOfPlayingAudioInPlayList++;
   if (indexOfPlayingAudioInPlayList > amountOfSongs) {
     indexOfPlayingAudioInPlayList = 0;
@@ -184,8 +183,6 @@ function playNextSongInFlow () {
   opacity(elementWithCurrentSrc);
   playAudio();
 }
-
-
 
 
 Initial();

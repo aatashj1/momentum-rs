@@ -8,8 +8,6 @@ export default class SettingState {
   apiText;
 
   constructor(data) {
-
-
     this.playerText = document.querySelector(".player-check");
     this.weatherText = document.querySelector(".weather-check");
     this.greetingText = document.querySelector(".greeting-check");
@@ -30,16 +28,15 @@ export default class SettingState {
       openButton.style.display = "none";
       settingsBlock.style.display = "flex";
     }
-    function  closeSettingsBlock() {
+
+    function closeSettingsBlock() {
       openButton.style.display = "flex";
       settingsBlock.style.display = "none";
     }
-
   }
 
 
-
-  translate(dataJson, language){
+  translate(dataJson, language) {
     let settingsTextFromJson = dataJson.setting[language];
     this.playerText.textContent = settingsTextFromJson.player;
     this.weatherText.textContent = settingsTextFromJson.weather;
@@ -49,5 +46,4 @@ export default class SettingState {
     this.todoText.textContent = settingsTextFromJson.todo;
     this.apiText.textContent = settingsTextFromJson.photoSource;
   }
-
 }

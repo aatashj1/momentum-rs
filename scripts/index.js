@@ -10,7 +10,7 @@ let langEng = document.querySelector('.eng');
 
 export let dataContainer = new DataContainer();
 
-dataContainer.getDataJsonPromise().then(result => {
+dataContainer.getDataFromJson().then(result => {
   dataContainer.data.dataJson = result;
   getWeather(dataContainer.data, dataContainer.data.currentLanguage).then();
 
